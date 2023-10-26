@@ -1,0 +1,17 @@
+{
+  "name": "proyecto1",
+  "version": "1.0.0",
+  "description": "Proyecto 1",
+  "author": "Esteban Espinoza Fallas",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxt/content": "^1.14.0",
+    "nuxt": "^2.14.0"
+  }
+}

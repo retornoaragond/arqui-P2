@@ -1,0 +1,51 @@
+[
+  {
+    "name": "albums_index",
+    "path": "/albums_index",
+    "component": "C:\\\\Users\\\\esteb\\\\Desktop\\\\Arqui 2023\\\\Tutorial_05\\\\pages\\\\albums_index.vue",
+    "chunkName": "pages/albums_index",
+    "_name": "_7e4c25a8"
+  },
+  {
+    "name": "composers_index",
+    "path": "/composers_index",
+    "component": "C:\\\\Users\\\\esteb\\\\Desktop\\\\Arqui 2023\\\\Tutorial_05\\\\pages\\\\composers_index.vue",
+    "chunkName": "pages/composers_index",
+    "_name": "_49cbce01"
+  },
+  {
+    "name": "movies_index",
+    "path": "/movies_index",
+    "component": "C:\\\\Users\\\\esteb\\\\Desktop\\\\Arqui 2023\\\\Tutorial_05\\\\pages\\\\movies_index.vue",
+    "chunkName": "pages/movies_index",
+    "_name": "_ca364c6a"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\esteb\\\\Desktop\\\\Arqui 2023\\\\Tutorial_05\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_c44c98a6"
+  },
+  {
+    "name": "albums-slug",
+    "path": "/albums/:slug?",
+    "component": "C:\\\\Users\\\\esteb\\\\Desktop\\\\Arqui 2023\\\\Tutorial_05\\\\pages\\\\albums\\\\_slug.vue",
+    "chunkName": "pages/albums/_slug",
+    "_name": "_0a599d81"
+  },
+  {
+    "name": "composers-slug",
+    "path": "/composers/:slug?",
+    "component": "C:\\\\Users\\\\esteb\\\\Desktop\\\\Arqui 2023\\\\Tutorial_05\\\\pages\\\\composers\\\\_slug.vue",
+    "chunkName": "pages/composers/_slug",
+    "_name": "_c0b85168"
+  },
+  {
+    "name": "movies-slug",
+    "path": "/movies/:slug?",
+    "component": "C:\\\\Users\\\\esteb\\\\Desktop\\\\Arqui 2023\\\\Tutorial_05\\\\pages\\\\movies\\\\_slug.vue",
+    "chunkName": "pages/movies/_slug",
+    "_name": "_71ac44c2"
+  }
+]
