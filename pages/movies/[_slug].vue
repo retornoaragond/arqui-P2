@@ -7,9 +7,13 @@ const { data: albums, refresh: rAlbum } =
   await useFetch(`https://cms-una.000webhostapp.com/api/content/items/Albums?filter={"movieId._id":"${route.params._slug}"}&fields={"title":true}`)
 rAlbum()
 const sanitizeHtml = (html) => {
-  const div = document.createElement('div');
-  div.innerHTML = html;
-  return div.innerText;
+  if (process.client) { // Verifica si se está ejecutando en el cliente
+    const div = document.createElement('div');
+    div.innerHTML = html;
+    return div.innerText;
+  } else {
+    return html; // En el servidor, simplemente devuelve el HTML sin cambios
+  }
 };
 </script>
 

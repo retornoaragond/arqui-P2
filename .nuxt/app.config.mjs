@@ -4,7 +4,7 @@ import { defuFn } from '/Users/estebanespinoza/Desktop/My bag/Universidad Nacion
 
 const inlineConfig = {
   "nuxt": {
-    "buildId": "test"
+    "buildId": "d648ebef-44eb-481f-9883-2de61015e553"
   }
 }
 

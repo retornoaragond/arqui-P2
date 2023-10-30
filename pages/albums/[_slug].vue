@@ -4,9 +4,13 @@ const { data: album, refresh } =
   await useFetch(`https://cms-una.000webhostapp.com/api/content/item/Albums/${route.params._slug}`)
 refresh()
 const sanitizeHtml = (html) => {
-  const div = document.createElement('div');
-  div.innerHTML = html;
-  return div.innerText;
+  if (process.client) { // Verifica si se está ejecutando en el cliente
+    const div = document.createElement('div');
+    div.innerHTML = html;
+    return div.innerText;
+  } else {
+    return html; // En el servidor, simplemente devuelve el HTML sin cambios
+  }
 };
 </script>
 
