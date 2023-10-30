@@ -3,7 +3,11 @@ const route = useRoute()
 const { data: album, refresh } =
   await useFetch(`https://cms-una.000webhostapp.com/api/content/item/Albums/${route.params._slug}`)
 refresh()
-console.log(album);
+const sanitizeHtml = (html) => {
+  const div = document.createElement('div');
+  div.innerHTML = html;
+  return div.innerText;
+};
 </script>
 
 <template>
@@ -22,7 +26,7 @@ console.log(album);
             album.record_label }}<br>
         Número de pistas: {{ album.tracks }}<br><br>
         <b>Descripción</b><br>
-        {{ album.description }}
+        <div v-html="sanitizeHtml(album.description)"></div>
         <p>Película asociada: <NuxtLink :to="'/movies/' + album.movieId._id">{{ album.Movie }}</NuxtLink> 
         </p>
       </div>

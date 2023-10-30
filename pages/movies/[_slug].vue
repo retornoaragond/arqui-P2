@@ -1,10 +1,10 @@
 <script setup>
 const route = useRoute()
-const { data: composer, refresh: rComposer } =
-  await useFetch(`https://cms-una.000webhostapp.com/api/content/item/Composers/${route.params._slug}`)
-rComposer()
+const { data: movie, refresh: rMovie } =
+  await useFetch(`https://cms-una.000webhostapp.com/api/content/item/Movies/${route.params._slug}`)
+rMovie()
 const { data: albums, refresh: rAlbum } =
-  await useFetch(`https://cms-una.000webhostapp.com/api/content/items/Albums?filter={"composerId._id":"${route.params._slug}"}&fields={"title":true}`)
+  await useFetch(`https://cms-una.000webhostapp.com/api/content/items/Albums?filter={"movieId._id":"${route.params._slug}"}&fields={"title":true}`)
 rAlbum()
 const sanitizeHtml = (html) => {
   const div = document.createElement('div');
@@ -18,17 +18,16 @@ const sanitizeHtml = (html) => {
     <HeaderView />
     <div class="row">
       <div class="column image-column">
-        <img class="composer-image" :src="`https://cms-una.000webhostapp.com/storage/uploads${composer.image.path}`">
+        <img class="movie-image" :src="`https://cms-una.000webhostapp.com/storage/uploads${movie.image.path}`">
       </div>
       <div class="column info-column">
-        <h4>{{ composer.name }}</h4>
-        <b>Nacionalidad:</b> {{ composer.nationality }};<br> <b>Fecha de nacimiento:</b> {{ composer.birth_date }}<br>
-        Géneros musicales: {{ composer.music_genres }}<br><br>
-        <b>Biografía</b><br>
-        <div v-html="sanitizeHtml(composer.description)"></div>
+        <h4>{{ movie.title }}</h4>
+        <b>Año de lanzamiento:</b> {{ movie.release_year }}; <b>Géneros:</b> {{ movie.genres }}<br><br>
+        <b>Sinopsis</b><br>
+        <div v-html="sanitizeHtml(movie.description)"></div>
         <h5>Álbumes</h5>
         <ul class="album-list">
-          <li v-for="album in albums" :key="album._id" class="album-item">
+          <li v-for="album in albums" :key="album.id" class="album-item">
             <NuxtLink :to="`/albums/` + album._id">{{ album.title }}</NuxtLink>
           </li>
         </ul>
@@ -62,7 +61,7 @@ h4 {
   max-width: 400px;
 }
 
-.composer-image {
+.movie-image {
   max-width: 100%;
   height: auto;
   max-height: 400px;
@@ -94,4 +93,3 @@ h4 {
   background-color: #2980b9;
 }
 </style>
-
