@@ -4,8 +4,14 @@
     <h3>Álbumes de Música de Películas</h3>
     <p>Esta sección presenta información sobre álbumes de música de películas.</p>
     <ul class="album-list">
-      <li v-for="album in albums" :key="album.id" class="album-item">
-        <NuxtLink :to="{ name: 'albums-slug', params: { slug: album.slug } }" class="album-link">{{ album.title }}</NuxtLink>
+      <li class="album-item">
+        <NuxtLink class="menu-link" to="/albums_index">Álbumes</NuxtLink>
+      </li>
+      <li class="album-item">
+        <NuxtLink class="menu-link" to="/composers_index">Compositores</NuxtLink>
+      </li>
+      <li class="album-item">
+        <NuxtLink class="menu-link" to="/movies_index">Películas</NuxtLink>
       </li>
     </ul>
     <FooterView />

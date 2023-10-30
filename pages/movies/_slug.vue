@@ -18,8 +18,8 @@ export default {
       </div>
       <div class="six columns">
         <h4>{{ movie.title }}</h4>
-        Año de lanzamiento: {{ movie.release_year }}; Géneros: {{ movie.genres.join(', ') }}</br></br>
-        <b>Sinopsis</b></br>
+        Año de lanzamiento: {{ movie.release_year }}; Géneros: {{ movie.genres.join(', ') }}<br><br>
+        <b>Sinopsis</b><br>
         <nuxt-content :document="movie" />
       </div>
       <div class="three columns"></div>

@@ -1,11 +1,7 @@
-<script>
-export default {
-  async asyncData({ $content }) {
-    const composers = await $content("composers").fetch();
-    console.log(composers)
-    return { composers };
-  },
-};
+
+<script setup>
+const { data: composers } =
+  await useFetch(`https://cms-una.000webhostapp.com/api/content/items/Composers?fields={"name":true}`)
 </script>
 
 <template>
@@ -14,16 +10,8 @@ export default {
     <h3>Compositores</h3>
     <p>Esta sección presenta información sobre composeres.</p>
     <ul class="composer-list">
-      <li
-        v-for="composer in composers"
-        :key="composer.slug"
-        class="composer-item"
-      >
-        <NuxtLink
-          :to="{ name: 'composers-slug', params: { slug: composer.slug } }"
-          class="composer-link"
-          >{{ composer.name }}</NuxtLink
-        >
+      <li v-for="composer in composers" :key="composer._id" class="composer-item">
+        <NuxtLink :to="`/composers/` + composer._id" class="composer-link">{{ composer.name }}</NuxtLink>
       </li>
     </ul>
     <FooterView />

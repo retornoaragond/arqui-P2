@@ -1,11 +1,6 @@
-<script>
-export default {
-  async asyncData({ $content }) {
-    // Reemplaza 'albums' con el nombre de tu contenido de álbumes
-    const albums = await $content("albums").fetch();
-    return { albums };
-  },
-};
+<script setup>
+  const { data: albums } = 
+    await useFetch(`https://cms-una.000webhostapp.com/api/content/items/Albums?fields={"title":true}`)
 </script>
 
 <template>
@@ -14,12 +9,8 @@ export default {
     <h3>Información de Álbumes</h3>
     <p>Esta sección presenta información sobre álbumes.</p>
     <ul class="album-list">
-      <li v-for="album in albums" :key="album.id" class="album-item">
-        <NuxtLink
-          :to="{ name: 'albums-slug', params: { slug: album.slug } }"
-          class="album-link"
-          >{{ album.title }}</NuxtLink
-        >
+      <li v-for="album in albums" :key="album._id" class="album-item">
+        <NuxtLink :to="`/albums/`+ album._id" class="album-link">{{ album.title }}</NuxtLink>
       </li>
     </ul>
     <FooterView />

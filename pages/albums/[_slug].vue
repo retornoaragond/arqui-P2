@@ -1,0 +1,63 @@
+<script setup>
+const route = useRoute()
+const { data: album, refresh } =
+  await useFetch(`https://cms-una.000webhostapp.com/api/content/item/Albums/${route.params._slug}`)
+refresh()
+console.log(album);
+</script>
+
+<template>
+  <div class="container">
+    <HeaderView />
+    <div class="row">
+      <div class="column image-column">
+        <img class="album-image" :src="`https://cms-una.000webhostapp.com/storage/uploads${album.image.path}`"
+          alt="Portada del álbum">
+      </div>
+      <div class="column info-column">
+        <h4>{{ album.title }}</h4>
+        Compositor: <NuxtLink :to="'/composers/' + album.composerId._id">{{ album.Composer }}</NuxtLink><br>
+        <b>Año de lanzamiento:</b> {{ album.release_year }}; <br><b>Género:</b> {{ album.genres }}; <br> <b>Sello
+          discográfico:</b> {{
+            album.record_label }}<br>
+        Número de pistas: {{ album.tracks }}<br><br>
+        <b>Descripción</b><br>
+        {{ album.description }}
+        <p>Película asociada: <NuxtLink :to="'/movies/' + album.movieId._id">{{ album.Movie }}</NuxtLink> 
+        </p>
+      </div>
+    </div>
+    <FooterView />
+  </div>
+</template>
+
+<style scoped>
+.project-title {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+h4 {
+  margin-top: 15px;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+  padding: 20px;
+}
+
+.image-column {
+  max-width: 400px;
+}
+
+.album-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+}
+</style>

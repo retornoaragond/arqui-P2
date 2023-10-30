@@ -1,26 +1,22 @@
+<script setup>
+  const { data: movies } = 
+    await useFetch(`https://cms-una.000webhostapp.com/api/content/items/Movies?fields={"title":true}`)
+</script>
+
 <template>
   <div class="container">
     <HeaderView />
     <h3>Películas</h3>
     <p>Esta sección presenta información sobre películas.</p>
     <ul class="movie-list">
-      <li v-for="movie in movies" :key="movie.id" class="movie-item">
-        <NuxtLink :to="{ name: 'movies-slug', params: { slug: movie.slug } }" class="movie-link">{{ movie.title }}</NuxtLink>
+      <li v-for="movie in movies" :key="movie._id" class="movie-item">
+        <NuxtLink :to="`/movies/`+movie._id" class="movie-link">{{ movie.title }}</NuxtLink>
       </li>
     </ul>
     <FooterView />
   </div>
 </template>
 
-<script>
-export default {
-  async asyncData({ $content }) {
-    // Reemplaza 'movies' con el nombre de tu contenido de películas
-    const movies = await $content('movies').fetch();
-    return { movies };
-  }
-};
-</script>
 
 <style scoped>
 .project-title {
