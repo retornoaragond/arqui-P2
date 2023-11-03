@@ -482,7 +482,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/albums_index-868688b3.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/albums_index-f2a3e34d.js").then((m) => m.default || m)
   },
   {
     name: "albums-_slug",
@@ -490,7 +490,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/__slug_-e2eb8623.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/__slug_-d556d700.js").then((m) => m.default || m)
   },
   {
     name: "composers_index",
@@ -498,7 +498,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/composers_index-cedc905a.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/composers_index-a7b4c892.js").then((m) => m.default || m)
   },
   {
     name: "composers-_slug",
@@ -506,7 +506,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/__slug_-e3e817fb.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/__slug_-286ca8bb.js").then((m) => m.default || m)
   },
   {
     name: "index",
@@ -514,7 +514,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/index-f64eaa31.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-b5653f49.js").then((m) => m.default || m)
   },
   {
     name: "movies_index",
@@ -522,7 +522,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/movies_index-bc2de733.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/movies_index-ed12cc06.js").then((m) => m.default || m)
   },
   {
     name: "movies-_slug",
@@ -530,7 +530,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import("./_nuxt/__slug_-a6b117ab.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/__slug_-36f7c5f5.js").then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -779,7 +779,7 @@ const revive_payload_server_eJ33V7gbc6 = /* @__PURE__ */ defineNuxtPlugin({
   }
 });
 const LazyFooterView = defineAsyncComponent(() => import("./_nuxt/FooterView-ed279187.js").then((r) => r.default));
-const LazyHeaderView = defineAsyncComponent(() => import("./_nuxt/HeaderView-f6ad7ae6.js").then((r) => r.default));
+const LazyHeaderView = defineAsyncComponent(() => import("./_nuxt/HeaderView-fff0fb24.js").then((r) => r.default));
 const lazyGlobalComponents = [
   ["FooterView", LazyFooterView],
   ["HeaderView", LazyHeaderView]

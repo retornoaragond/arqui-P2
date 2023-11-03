@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="project-title">Proyecto 1</h1>
+    <h1 class="project-title">Proyecto 2</h1>
     <div class="row" style="margin-top: 15px">
       <NuxtLink class="menu-link" to="/">Inicio</NuxtLink>
       <NuxtLink class="menu-link" to="/albums_index">Álbumes</NuxtLink>

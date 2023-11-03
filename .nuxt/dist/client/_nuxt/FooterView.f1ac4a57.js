@@ -1,0 +1,1 @@
+import{_ as o,o as s,c as t,p as _,e as c,a}from"./entry.d9bee3c2.js";const n={},d=e=>(_("data-v-1e38513b"),e=e(),c(),e),r={class:"footer"},p=d(()=>a("p",null,"© 2023 Esteban Espinoza Fallas. Todos los derechos reservados.",-1)),l=[p];function i(e,f){return s(),t("footer",r,l)}const h=o(n,[["render",i],["__scopeId","data-v-1e38513b"]]);export{h as default};
